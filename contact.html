@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - AI Insights</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar (copied from index.html) -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">AI Insights</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="mobile-menu" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+  <main class="container" style="padding-top:7.5rem;">
+    <section style="margin-top:3.5rem;">
+      <h1>Contact Us</h1>
+      <style>
+        .contact-form-stylish {
+          background: rgba(24,28,47,0.82);
+          backdrop-filter: blur(10px);
+          border-radius: 1.5rem;
+          box-shadow: 0 8px 32px #40e0ff22;
+          padding: 2.5rem 2rem 2rem 2rem;
+          max-width: 420px;
+          margin: 2.5rem auto 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+        }
+        .contact-form-stylish input,
+        .contact-form-stylish textarea {
+          width: 100%;
+          padding: 0.85rem 1.1rem 0.85rem 2.5rem;
+          border-radius: 0.9rem;
+          border: none;
+          background: rgba(255,255,255,0.08);
+          color: #e0e0e0;
+          font-size: 1.08rem;
+          box-shadow: 0 2px 12px #40e0ff11;
+          outline: none;
+          transition: box-shadow 0.2s, background 0.2s;
+        }
+        .contact-form-stylish input:focus,
+        .contact-form-stylish textarea:focus {
+          background: rgba(64,224,255,0.10);
+          box-shadow: 0 0 0 2px #40e0ff66;
+        }
+        .contact-form-stylish textarea {
+          min-height: 110px;
+          resize: vertical;
+        }
+        .contact-form-stylish .input-icon {
+          position: absolute;
+          left: 0.9rem;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #40e0ff;
+          font-size: 1.2rem;
+          pointer-events: none;
+        }
+        .contact-form-stylish .input-group {
+          position: relative;
+        }
+        .contact-form-stylish button {
+          margin-top: 0.5rem;
+          padding: 0.95rem 0;
+          width: 100%;
+          border-radius: 1.2rem;
+          border: none;
+          background: linear-gradient(90deg,#40e0ff,#b266ff);
+          color: #111;
+          font-size: 1.15rem;
+          font-weight: 700;
+          box-shadow: 0 2px 16px #40e0ff33;
+          cursor: pointer;
+          transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+        }
+        .contact-form-stylish button:hover {
+          background: linear-gradient(90deg,#b266ff,#40e0ff);
+          box-shadow: 0 4px 24px #b266ff44;
+          transform: translateY(-2px) scale(1.03);
+        }
+      </style>
+      <form class="contact-form-stylish contact-form" aria-label="Contact form">
+        <div class="input-group">
+          <span class="input-icon">👤</span>
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="input-group">
+          <span class="input-icon">✉️</span>
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="input-group">
+          <span class="input-icon">��</span>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <!-- Popup Modal -->
+      <style>
+        #contact-modal {
+          display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+          background: rgba(0,0,0,0.35); z-index: 2000; justify-content: center; align-items: center;
+          animation: fadeInBg 0.4s;
+        }
+        #contact-modal.active { display: flex; }
+        @keyframes fadeInBg { from { opacity: 0; } to { opacity: 1; } }
+        .modal-box {
+          background: rgba(24,28,47,0.85); backdrop-filter: blur(12px);
+          padding: 2.5rem 2.7rem; border-radius: 1.5rem; box-shadow: 0 8px 40px #40e0ff55;
+          max-width: 90vw; text-align: center; position: relative;
+          border: 2.5px solid; border-image: linear-gradient(90deg,#40e0ff,#b266ff,#40e0ff) 1;
+          animation: popIn 0.45s cubic-bezier(.23,1.12,.62,1.01);
+        }
+        @keyframes popIn {
+          0% { opacity: 0; transform: scale(0.7); }
+          80% { transform: scale(1.08); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        #close-modal {
+          position: absolute; top: 0.7rem; right: 1.2rem; background: none; border: none;
+          font-size: 2rem; color: #40e0ff; cursor: pointer; transition: transform 0.18s, color 0.18s;
+        }
+        #close-modal:hover { color: #b266ff; transform: scale(1.25) rotate(12deg); }
+        .modal-check {
+          display: flex; justify-content: center; align-items: center;
+          margin-bottom: 1.1rem;
+        }
+        .modal-check svg {
+          width: 48px; height: 48px;
+          filter: drop-shadow(0 0 8px #40e0ff88);
+          animation: checkPop 0.6s cubic-bezier(.23,1.12,.62,1.01);
+        }
+        @keyframes checkPop {
+          0% { opacity: 0; transform: scale(0.5) rotate(-30deg); }
+          80% { transform: scale(1.15) rotate(8deg); }
+          100% { opacity: 1; transform: scale(1) rotate(0); }
+        }
+      </style>
+      <div id="contact-modal">
+        <div class="modal-box">
+          <button id="close-modal">&times;</button>
+          <div class="modal-check">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#40e0ff" stroke-width="2.5" fill="#23284a"/><path d="M8 12.5l3 3 5-5.5" stroke="#40e0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="color:#40e0ff;font-weight:600;font-size:1.2rem;">Thank you for contacting us. Our team will connect with you shortly.</div>
+        </div>
+      </div>
+    </section>
+    <!-- Feedback/Collaboration Section -->
+    <section style="margin-top:3rem;">
+      <h2>Feedback & Collaboration</h2>
+      <p>We value your feedback and are open to collaborations! Use the form above or email us directly at <a href="mailto:info@aiinsights.com" style="color:#40e0ff;">info@aiinsights.com</a>.</p>
+    </section>
+    <!-- Social Media Links Section -->
+    <section style="margin-top:2.5rem;">
+      <h2>Connect with Us</h2>
+      <div class="social-links" style="font-size:2rem; display:flex; gap:1.5rem; margin:1rem 0;">
+        <a href="#" aria-label="Twitter" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4.36a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.5 0c-2.5 0-4.5 2.01-4.5 4.5 0 .35.04.7.11 1.03C7.69 5.36 4.07 3.6 1.64.96c-.38.65-.6 1.4-.6 2.2 0 1.52.77 2.86 1.94 3.65A4.48 4.48 0 0 1 .96 6v.06c0 2.13 1.52 3.91 3.54 4.31-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.55 1.72 2.16 2.97 4.07 3A9.05 9.05 0 0 1 0 19.54a12.8 12.8 0 0 0 6.95 2.04c8.34 0 12.9-6.91 12.9-12.9 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 23 3z"/></svg></a>
+        <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><rect x="2" y="2" width="24" height="24" rx="4"/><path d="M16 8a6 6 0 0 1 6 6v6"/><path d="M8 8v12"/><path d="M8 8h.01"/></svg></a>
+        <a href="#" aria-label="GitHub" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 21.13V25"/></svg></a>
+      </div>
+    </section>
+    <!-- Newsletter Subscription Section -->
+    <section style="margin-top:2.5rem;">
+      <h2>Subscribe to Our Newsletter</h2>
+      <form class="newsletter-form" aria-label="Newsletter subscription" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; margin-top:1rem;">
+        <input type="email" name="newsletter-email" placeholder="Your Email Address" required style="padding:0.7rem 1.2rem; border-radius:8px; border:none; min-width:220px; font-size:1rem;" />
+        <button type="submit" class="cta-button primary" style="padding:0.7rem 2rem;">Subscribe</button>
+      </form>
+      <p style="font-size:0.98rem; color:#aaa; margin-top:0.7rem;">Get the latest AI insights, research, and updates delivered to your inbox.</p>
+    </section>
+  </main>
+  <!-- Footer (copied from index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="logo">AI Insights</div>
+          <p>Pioneering the future of artificial intelligence research and application.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="#" aria-label="GitHub">🐙</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>📧 info@aiinsights.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <p>📍 San Francisco, CA</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Insights. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="index.html" style="position:fixed;right:2.5rem;bottom:2.5rem;z-index:1000;padding:0.9rem 1.1rem;background:linear-gradient(90deg,#40e0ff,#b266ff);color:#111;display:flex;align-items:center;justify-content:center;border-radius:2rem;text-decoration:none;box-shadow:0 4px 24px #40e0ff44;font-size:1.7rem;transition:background 0.2s,box-shadow 0.2s;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="#111" d="M4 10.75V19a1 1 0 0 0 1 1h4.25v-4.25h5.5V20H19a1 1 0 0 0 1-1v-8.25a1 1 0 0 0-.293-.707l-7-7a1 1 0 0 0-1.414 0l-7 7A1 1 0 0 0 4 10.75Zm2 1.414 6-6 6 6V18h-2.25v-4.25a1 1 0 0 0-1-1h-3.5a1 1 0 0 0-1 1V18H6v-5.836Z"/></svg></a>
+  <script src="script.js"></script>
+  <script>
+    const modal = document.getElementById('contact-modal');
+    const closeModal = document.getElementById('close-modal');
+    document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      modal.classList.add('active');
+      setTimeout(() => { modal.classList.remove('active'); }, 3000);
+    });
+    closeModal?.addEventListener('click', function() {
+      modal.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

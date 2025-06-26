@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Insights - Exploring the Future of Intelligence</title>
+    <meta name="description" content="Explore the latest AI insights, research, and innovations shaping the future of artificial intelligence and machine learning.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="index.html" style="position:fixed;right:2.5rem;bottom:2.5rem;z-index:1000;padding:0.9rem 1.1rem;background:linear-gradient(90deg,#40e0ff,#b266ff);color:#111;display:flex;align-items:center;justify-content:center;border-radius:2rem;text-decoration:none;box-shadow:0 4px 24px #40e0ff44;font-size:1.7rem;transition:background 0.2s,box-shadow 0.2s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="#111" d="M4 10.75V19a1 1 0 0 0 1 1h4.25v-4.25h5.5V20H19a1 1 0 0 0 1-1v-8.25a1 1 0 0 0-.293-.707l-7-7a1 1 0 0 0-1.414 0l-7 7A1 1 0 0 0 4 10.75Zm2 1.414 6-6 6 6V18h-2.25v-4.25a1 1 0 0 0-1-1h-3.5a1 1 0 0 0-1 1V18H6v-5.836Z"/></svg>
+    </a>
+    <!-- Animated background -->
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">AI Insights</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-ai-dropdown">
+                    <button class="ai-dropdown-toggle" onclick="toggleAIDropdown(event)">🌐 All AI List ▼</button>
+                    <div class="ai-dropdown-content" id="aiDropdownContent">
+                        <div class="ai-category">
+                            <div class="ai-category-title">Chatbots</div>
+                            <ul>
+                                <li><a href="chatgpt.html">ChatGPT</a></li>
+                                <li><a href="gemini.html">Google Gemini</a></li>
+                                <li><a href="claude.html">Anthropic Claude</a></li>
+                                <li><a href="perplexity.html">Perplexity AI</a></li>
+                                <li><a href="pi.html">Pi (Inflection)</a></li>
+                                <li><a href="microsoft-copilot.html">Microsoft Copilot</a></li>
+                                <li><a href="you-ai.html">You.com AI</a></li>
+                                <li><a href="mistral-ai.html">Mistral AI</a></li>
+                                <li><a href="llama.html">Llama (Meta AI)</a></li>
+                                <li><a href="jasper-ai.html">Jasper AI</a></li>
+                            </ul>
+                        </div>
+                        <div class="ai-category">
+                            <div class="ai-category-title">Image/Video/Audio Generators</div>
+                            <ul>
+                                <li><a href="midjourney.html">Midjourney</a></li>
+                                <li><a href="stable-diffusion.html">Stable Diffusion</a></li>
+                                <li><a href="dalle.html">DALL·E</a></li>
+                                <li><a href="ideogram.html">Ideogram</a></li>
+                                <li><a href="dreamstudio.html">DreamStudio</a></li>
+                                <li><a href="canva-ai.html">Canva AI</a></li>
+                                <li><a href="synthesia.html">Synthesia</a></li>
+                                <li><a href="pictory.html">Pictory</a></li>
+                                <li><a href="elevenlabs.html">ElevenLabs</a></li>
+                            </ul>
+                        </div>
+                        <div class="ai-category">
+                            <div class="ai-category-title">Code Assistants</div>
+                            <ul>
+                                <li><a href="copilot.html">GitHub Copilot</a></li>
+                                <li><a href="codewhisperer.html">Amazon CodeWhisperer</a></li>
+                                <li><a href="tabnine.html">Tabnine</a></li>
+                                <li><a href="replit-ghostwriter.html">Replit Ghostwriter</a></li>
+                            </ul>
+                        </div>
+                        <div class="ai-category">
+                            <div class="ai-category-title">Other AI Tools</div>
+                            <ul>
+                                <li><a href="deepl.html">DeepL</a></li>
+                                <li><a href="descript.html">Descript</a></li>
+                                <li><a href="runwayml.html">RunwayML</a></li>
+                                <li><a href="notion-ai.html">Notion AI</a></li>
+                                <li><a href="quillbot.html">QuillBot</a></li>
+                                <li><a href="grammarlygo.html">GrammarlyGO</a></li>
+                                <li><a href="copy-ai.html">Copy.ai</a></li>
+                                <li><a href="writesonic.html">Writesonic</a></li>
+                                <li><a href="chatpdf.html">ChatPDF</a></li>
+                                <li><a href="tome-ai.html">Tome AI</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-menu" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page Content -->
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero fade-in">
+                <div class="bounce-center">
+                  <h1 class="bounce-gradient">Welcome to AI Insights</h1>
+                </div>
+                <p>Exploring the frontiers of artificial intelligence and machine learning to shape tomorrow's world</p>
+                <div class="hero-buttons">
+                    <a href="insights.html" class="cta-button primary">Explore Insights</a>
+                    <a href="contact.html" class="cta-button secondary">Get Started</a>
+                </div>
+            </section>
+
+            <!-- Brief Introduction to AI and Site Purpose -->
+            <section class="intro-section fade-in">
+                <h2>What is Artificial Intelligence?</h2>
+                <p>Artificial Intelligence (AI) is the simulation of human intelligence in machines that are programmed to think, learn, and solve problems. Our mission is to provide the latest insights, research, and tools to help you navigate the rapidly evolving world of AI.</p>
+            </section>
+
+            <!-- Search Bar and Trending Tags -->
+            <section class="search-section fade-in">
+                <form class="search-form" action="#" method="get">
+                    <input type="text" placeholder="Search articles, tools, models..." name="q" aria-label="Search">
+                    <button type="submit">🔍</button>
+                </form>
+                <div class="trending-tags">
+                    <span>Trending:</span>
+                    <a href="#generative-ai">#GenerativeAI</a>
+                    <a href="#machine-learning">#MachineLearning</a>
+                    <a href="#ai-models">#AIModels</a>
+                    <a href="#healthcare-ai">#HealthcareAI</a>
+                </div>
+            </section>
+
+            <!-- Featured Cards -->
+            <section class="featured-section">
+                <h2 class="section-title">Featured Areas</h2>
+                <div class="cards-grid">
+                    <div class="card fade-in" id="generative-ai" data-delay="0.1">
+                        <div class="card-icon">✨</div>
+                        <h3>Generative AI</h3>
+                        <p>Discover how generative AI is creating new content, art, and ideas, transforming industries and creativity.</p>
+                        <a href="insights.html" class="card-link">Learn More →</a>
+                    </div>
+                    <div class="card fade-in" id="machine-learning" data-delay="0.2">
+                        <div class="card-icon">🤖</div>
+                        <h3>Machine Learning</h3>
+                        <p>Dive deep into the latest developments in machine learning algorithms, neural networks, and their real-world applications across industries.</p>
+                        <a href="research.html" class="card-link">Learn More →</a>
+                    </div>
+                    <div class="card fade-in" id="ai-models" data-delay="0.3">
+                        <div class="card-icon">📊</div>
+                        <h3>AI Models</h3>
+                        <p>Explore top AI models, their architectures, and how they are powering the next generation of intelligent systems.</p>
+                        <a href="insights.html" class="card-link">Learn More →</a>
+                    </div>
+                    <div class="card fade-in" id="healthcare-ai" data-delay="0.4">
+                        <div class="card-icon">🩺</div>
+                        <h3>Healthcare AI</h3>
+                        <p>See how AI is revolutionizing healthcare, from diagnostics to patient care and medical research.</p>
+                        <a href="insights.html" class="card-link">Learn More →</a>
+                    </div>
+                    <div class="card fade-in" id="deep-learning" data-delay="0.5">
+                        <div class="card-icon">🧠</div>
+                        <h3>Deep Learning</h3>
+                        <p>Explore the cutting-edge world of deep neural networks, transformers, and how they're revolutionizing AI capabilities.</p>
+                        <a href="research.html" class="card-link">Learn More →</a>
+                    </div>
+                    <div class="card fade-in" id="ai-innovation" data-delay="0.6">
+                        <div class="card-icon">🚀</div>
+                        <h3>AI Innovation</h3>
+                        <p>Stay updated with breakthrough AI technologies, from generative models to autonomous systems shaping our future.</p>
+                        <a href="insights.html" class="card-link">Learn More →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section fade-in">
+                <div class="stats-container">
+                    <div class="stat">
+                        <span class="stat-number" data-count="120">0</span>
+                        <div class="stat-label">AI Models Analyzed</div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="85">0</span>
+                        <div class="stat-label">Research Papers</div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="210">0</span>
+                        <div class="stat-label">Industry Insights</div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="34">0</span>
+                        <div class="stat-label">AI Experts</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest Insights Preview -->
+            <section class="insights-preview">
+                <h2 class="section-title">Latest Insights</h2>
+                <div class="insights-grid">
+                    <article class="insight-card fade-in">
+                        <div class="insight-date">June 2025</div>
+                        <h3>The Future of Generative AI</h3>
+                        <p>Exploring how generative AI is transforming creative industries and business processes worldwide.</p>
+                        <a href="insights.html" class="insight-link">Read Full Article</a>
+                    </article>
+                    <article class="insight-card fade-in">
+                        <div class="insight-date">May 2025</div>
+                        <h3>AI in Healthcare Revolution</h3>
+                        <p>How artificial intelligence is revolutionizing diagnosis, treatment, and patient care in modern medicine.</p>
+                        <a href="insights.html" class="insight-link">Read Full Article</a>
+                    </article>
+                    <article class="insight-card fade-in">
+                        <div class="insight-date">April 2025</div>
+                        <h3>Quantum AI Breakthrough</h3>
+                        <p>Latest developments in quantum machine learning and their potential impact on computational power.</p>
+                        <a href="insights.html" class="insight-link">Read Full Article</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Featured Tools Section -->
+            <section class="featured-tools-section fade-in">
+                <h2 class="section-title" style="margin-bottom:2.5rem;">Featured Tools</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span class="card-icon" style="font-size:2.5rem;">🛠️</span>
+                        <h3>AI Model Explorer</h3>
+                        <p>Interactively explore, compare, and visualize top AI models and their performance metrics.</p>
+                        <a href="#" class="card-link" id="open-model-explorer">Try Now &rarr;</a>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon" style="font-size:2.5rem;">📊</span>
+                        <h3>Dataset Analyzer</h3>
+                        <p>Analyze and visualize datasets to uncover trends and insights for your AI projects.</p>
+                        <a href="#" class="card-link" id="open-dataset-analyzer">Analyze Data &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured AI Models Section -->
+            <section class="featured-models-section fade-in">
+                <h2 class="section-title">Featured AI Models</h2>
+                <div class="models-grid">
+                    <div class="model-card">
+                        <div class="model-icon">🤖</div>
+                        <h3>GPT-4</h3>
+                        <p>State-of-the-art language model powering advanced conversational AI and content generation.</p>
+                        <a href="#" class="model-link">Learn More →</a>
+                    </div>
+                    <div class="model-card">
+                        <div class="model-icon">🧠</div>
+                        <h3>Stable Diffusion</h3>
+                        <p>Leading generative model for creating high-quality images from text prompts.</p>
+                        <a href="#" class="model-link">Learn More →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Buttons Section -->
+            <section class="cta-buttons-section fade-in">
+                <h2>Join the AI Revolution!</h2>
+                <div class="cta-buttons-group">
+                    <a href="subscribe.html" class="cta-button primary">Subscribe</a>
+                    <a href="tools.html" class="cta-button secondary">Explore Tools</a>
+                    <a href="community.html" class="cta-button tertiary">Join Community</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">AI Insights</div>
+                    <p>Pioneering the future of artificial intelligence research and application.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="insights.html">Insights</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 info@aiinsights.com</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>📍 San Francisco, CA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Insights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tool Modal -->
+    <div id="tool-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:3000;align-items:center;justify-content:center;">
+        <div style="position:relative;width:95vw;max-width:420px;background:#181828;border-radius:16px;padding:2rem 1.5rem;box-shadow:0 8px 40px #40e0ff55;">
+            <button id="close-tool-modal" style="position:absolute;top:1rem;right:1rem;background:#a855f7;color:#fff;border:none;border-radius:50%;width:2.2rem;height:2.2rem;font-size:1.3rem;cursor:pointer;z-index:10;">&times;</button>
+            <div id="tool-modal-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stat-number');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-count');
+        let current = 0;
+        const increment = Math.ceil(target / 60); // Adjust speed here
+        const updateCounter = () => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target;
+          } else {
+            counter.textContent = current;
+            requestAnimationFrame(updateCounter);
+          }
+        };
+        updateCounter();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', animateCounters);
+
+    // Modal logic for featured tools
+    const toolModal = document.getElementById('tool-modal');
+    const toolModalContent = document.getElementById('tool-modal-content');
+    const closeToolModal = document.getElementById('close-tool-modal');
+    document.getElementById('open-model-explorer').onclick = function(e) {
+        e.preventDefault();
+        toolModalContent.innerHTML = `
+            <h2 style='color:#40e0ff;margin-bottom:1rem;'>AI Model Explorer</h2>
+            <p style='color:#e0e0e0;margin-bottom:1.2rem;'>Explore, compare, and visualize top AI models and their performance metrics. Dive into interactive charts and model details.</p>
+            <a href='model-explorer.html' class='cta-button' style='background:#40e0ff;color:#181828;font-weight:700;padding:0.6rem 1.7rem;border-radius:8px;text-decoration:none;display:inline-block;'>Launch Tool</a>
+        `;
+        toolModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    };
+    document.getElementById('open-dataset-analyzer').onclick = function(e) {
+        e.preventDefault();
+        toolModalContent.innerHTML = `
+            <h2 style='color:#40e0ff;margin-bottom:1rem;'>Dataset Analyzer</h2>
+            <p style='color:#e0e0e0;margin-bottom:1.2rem;'>Analyze and visualize datasets to uncover trends and insights for your AI projects. Upload your data and get instant analytics.</p>
+            <a href='dataset-analyzer.html' class='cta-button' style='background:#40e0ff;color:#181828;font-weight:700;padding:0.6rem 1.7rem;border-radius:8px;text-decoration:none;display:inline-block;'>Launch Tool</a>
+        `;
+        toolModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    };
+    if (closeToolModal) closeToolModal.onclick = function() {
+        toolModal.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+    toolModal.onclick = function(e) {
+        if (e.target === toolModal) {
+            toolModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    };
+    </script>
+</body>
+</html>

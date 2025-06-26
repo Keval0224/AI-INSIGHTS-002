@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insights - AI Insights</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="index.html" style="position:fixed;right:2.5rem;bottom:2.5rem;z-index:1000;padding:0.9rem 1.1rem;background:linear-gradient(90deg,#40e0ff,#b266ff);color:#111;display:flex;align-items:center;justify-content:center;border-radius:2rem;text-decoration:none;box-shadow:0 4px 24px #40e0ff44;font-size:1.7rem;transition:background 0.2s,box-shadow 0.2s;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="#111" d="M4 10.75V19a1 1 0 0 0 1 1h4.25v-4.25h5.5V20H19a1 1 0 0 0 1-1v-8.25a1 1 0 0 0-.293-.707l-7-7a1 1 0 0 0-1.414 0l-7 7A1 1 0 0 0 4 10.75Zm2 1.414 6-6 6 6V18h-2.25v-4.25a1 1 0 0 0-1-1h-3.5a1 1 0 0 0-1 1V18H6v-5.836Z"/></svg></a>
+  <!-- Navbar (copied from index.html) -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">AI Insights</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="insights.html" class="active">Insights</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-menu" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+  <main class="container minimalist-insights">
+    <section style="margin-bottom:3rem;">
+      <h1 style="font-size:2.7rem; font-weight:800; margin-bottom:1.2rem; letter-spacing:-1px;">Insights</h1>
+      <p style="font-size:1.25rem; color:#bdbdbd; max-width:600px; line-height:1.8; margin-bottom:2.5rem;">Discover the latest perspectives and developments in artificial intelligence. Curated for clarity, depth, and readability.</p>
+      <div class="tag-filter-bar" style="margin:2rem 0 2.5rem 0; display:flex; flex-wrap:wrap; gap:0.7rem;">
+        <span style="font-weight:600; color:#a855f7;">Filter by tag:</span>
+        <a href="#" class="tag-filter active-tag">#All</a>
+        <a href="#" class="tag-filter">#Trends</a>
+        <a href="#" class="tag-filter">#UseCases</a>
+        <a href="#" class="tag-filter">#Ethics</a>
+        <a href="#" class="tag-filter">#Research</a>
+        <a href="#" class="tag-filter">#NLP</a>
+        <a href="#" class="tag-filter">#ML</a>
+        <a href="#" class="tag-filter">#Vision</a>
+      </div>
+    </section>
+    <section class="insights-preview fade-in" style="margin:0;">
+      <!-- Latest Article Highlighted -->
+      <div class="insight-card latest-insight" style="padding:2.5rem 2rem 2.5rem 2rem; margin-bottom:2.5rem; background:none; border:none; box-shadow:none; border-radius:20px; border-left:4px solid #40e0ff;">
+        <div class="insight-date" style="font-size:1.1rem; color:#a855f7; margin-bottom:0.7rem;">June 2025</div>
+        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem;">
+          <!-- Lucide/heroicon: Sparkles -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M12 3v4m0 0v4m0-4h4m-4 0H8m12 10v2m0 0v2m0-2h2m-2 0h-2m-7.5 2.5l1.5 1.5m0 0l1.5-1.5m-1.5 1.5v-2m0 2v2"/></svg>
+          <h2 style="font-size:2rem; font-weight:700; margin:0; color:#fff;">The AI Revolution 2025: Breakthroughs, Ethics, and Visual Exploration</h2>
+        </div>
+        <div class="insight-meta" style="font-size:1rem; color:#aaa; margin-bottom:0.5rem;">By <strong>Deepika Sharma</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#Trends</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#GenerativeAI</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Ethics</span></div>
+        <p style="font-size:1.18rem; color:#e0e0e0; line-height:1.8; margin-bottom:1.5rem;">Explore how AI is transforming industries, driving innovation, and raising new ethical questions in 2025 and beyond.</p>
+        <a href="insight-3.html" class="insight-link" style="font-size:1.1rem; color:#40e0ff; text-decoration:underline;">Read Full Article →</a>
+      </div>
+      <!-- Divider -->
+      <hr style="border:none; border-top:1px solid #222; margin:2.5rem 0;"/>
+      <!-- Other Articles Grid -->
+      <div class="insights-grid minimalist-grid">
+        <!-- (Repeat for each article, add icon SVG before h3) -->
+        <!-- Article for #AI -->
+        <div class="insight-card" data-tags="AI,Trends,Ethics">
+          <div class="insight-date">July 2025</div>
+          <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M3 9v2m0 2v2m0-6V7m0 10v2m2-2h2m2 0h2m2 0h2m2 0h2m-2-2v-2m0-2V9m0 6v2m0-10V7"/></svg>
+            <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">What is Artificial Intelligence? A 2025 Primer</h3>
+          </div>
+          <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>AI Insights Team</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#AI</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Trends</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Ethics</span></div>
+          <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">A clear, up-to-date introduction to AI: what it is, how it works, and why it matters in 2025.</p>
+          <a href="insight-7.html" class="insight-link" style="font-size:1rem; color:#40e0ff; text-decoration:underline;">Read More →</a>
+        </div>
+        <!-- Article for #NLP -->
+        <div class="insight-card" data-tags="NLP,AI,Trends">
+          <div class="insight-date">July 2025</div>
+          <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-1.9 5.4A8.5 8.5 0 0 1 3.6 17L2 21l4-1.6A8.38 8.38 0 0 0 11.5 21a8.5 8.5 0 1 0-8.5-8.5"/></svg>
+            <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">NLP in 2025: Conversational AI and Beyond</h3>
+          </div>
+          <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>Priya Verma</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#NLP</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#AI</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Trends</span></div>
+          <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">How natural language processing is powering chatbots, translation, and knowledge discovery in the modern era.</p>
+          <a href="insight-8.html" class="insight-link" style="font-size:1rem; color:#40e0ff; text-decoration:underline;">Read More →</a>
+        </div>
+        <!-- Article 2 -->
+        <div class="insight-card" style="background:none; border:none; box-shadow:none; border-radius:15px; padding:2rem 1.5rem;">
+          <div class="insight-date">May 2025</div>
+          <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+            <!-- Lucide/heroicon: BookOpen -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 19V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14M2 19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2M2 19V5m12 14V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14m-8 0a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2m-8 0V5"/></svg>
+            <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Next-Gen NLP: How Large Language Models Are Changing Communication</h3>
+          </div>
+          <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>Priya Verma</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#NLP</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Trends</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#LLM</span></div>
+          <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">Discover how the latest advances in NLP and LLMs are enabling more natural, context-aware conversations and powering new AI applications.</p>
+          <a href="insight-1.html" class="insight-link" style="font-size:1rem; color:#40e0ff; text-decoration:underline;">Read More →</a>
+        </div>
+        <!-- Article 3 -->
+        <div class="insight-card" style="background:none; border:none; box-shadow:none; border-radius:15px; padding:2rem 1.5rem;">
+          <div class="insight-date">April 2025</div>
+          <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+            <!-- Lucide/heroicon: BrainCircuit -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-circuit"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+            <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Machine Learning in 2025: From Theory to Real-World Impact</h3>
+          </div>
+          <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>AI Insights Team</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#ML</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Research</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Trends</span></div>
+          <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">Explore the latest breakthroughs in machine learning, including self-supervised learning, federated learning, and their impact on industry.</p>
+          <a href="insight-2.html" class="insight-link" style="font-size:1rem; color:#40e0ff; text-decoration:underline;">Read More →</a>
+        </div>
+        <!-- Article 4 -->
+        <div class="insight-card" style="background:none; border:none; box-shadow:none; border-radius:15px; padding:2rem 1.5rem;">
+          <div class="insight-date">March 2025</div>
+          <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+            <!-- Lucide/heroicon: Eye -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+            <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI Vision: How Computer Vision is Powering the Next Wave of Innovation</h3>
+          </div>
+          <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>Deepika Sharma</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#Vision</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#UseCases</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Creativity</span></div>
+          <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">From medical imaging to autonomous vehicles, see how computer vision is transforming industries and enabling new creative possibilities.</p>
+          <a href="insight-3.html" class="insight-link" style="font-size:1rem; color:#40e0ff; text-decoration:underline;">Read More →</a>
+        </div>
+        <!-- Article 5 -->
+        <div class="insight-card" style="background:none; border:none; box-shadow:none; border-radius:15px; padding:2rem 1.5rem;">
+          <div class="insight-date">February 2024</div>
+          <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+            <!-- Lucide/heroicon: Briefcase -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
+            <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI in the Enterprise: Microsoft Copilot in Action</h3>
+          </div>
+          <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>Keval Parmar</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#UseCases</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Productivity</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Enterprise</span></div>
+          <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">See how Microsoft Copilot is transforming productivity in the workplace, from document creation to data analysis and beyond.</p>
+          <a href="insight-4.html" class="insight-link" style="font-size:1rem; color:#40e0ff; text-decoration:underline;">Read More →</a>
+        </div>
+        <!-- Article 6 -->
+        <div class="insight-card" style="background:none; border:none; box-shadow:none; border-radius:15px; padding:2rem 1.5rem;">
+          <div class="insight-date">January 2024</div>
+          <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+            <!-- Lucide/heroicon: ShieldCheck -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Responsible AI: Ethics and Safety in Modern Models</h3>
+          </div>
+          <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>AI Insights Team</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#Ethics</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Bias</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Regulation</span></div>
+          <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">As AI becomes more powerful, ethical considerations are more important than ever. Discover how Anthropic, OpenAI, and others are addressing safety and bias.</p>
+          <a href="insight-5.html" class="insight-link" style="font-size:1rem; color:#40e0ff; text-decoration:underline;">Read More →</a>
+        </div>
+        <!-- Article 7 -->
+        <div class="insight-card" style="background:none; border:none; box-shadow:none; border-radius:15px; padding:2rem 1.5rem;">
+          <div class="insight-date">December 2023</div>
+          <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+            <!-- Lucide/heroicon: Palette -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#40e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><circle cx="10.5" cy="16.5" r=".5"/><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm0-4a3 3 0 0 0 3-3c0-1.5-1.5-2-3-2s-3-.5-3-2a3 3 0 0 1 3-3"/></svg>
+            <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Generative AI for Creativity: Art, Music, and Video</h3>
+          </div>
+          <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>Deepika Sharma</strong> · <span class="ai-tag" style="color:#40e0ff; background:none;">#UseCases</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Vision</span> <span class="ai-tag" style="color:#40e0ff; background:none;">#Creativity</span></div>
+          <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">From DALL·E to Runway and Pictory, generative AI is unlocking new creative possibilities for artists, musicians, and filmmakers.</p>
+          <a href="insight-6.html" class="insight-link" style="font-size:1rem; color:#40e0ff; text-decoration:underline;">Read More →</a>
+        </div>
+      </div>
+    </section>
+    <!-- Research Content Start -->
+    <section class="insights-grid minimalist-grid">
+      <div class="insight-card" data-tags="ML,Research,Trends">
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🤖</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Machine Learning</h3>
+        </div>
+        <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>AI Insights Team</strong> · <span class="ai-tag">#ML</span> <span class="ai-tag">#Research</span> <span class="ai-tag">#Trends</span></div>
+        <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">Machine Learning (ML) is a subset of AI focused on building systems that learn from data and improve over time without explicit programming. ML powers applications like recommendation engines, fraud detection, and predictive analytics.</p>
+        <a href="ml-research.html" class="insight-link">Learn More →</a>
+      </div>
+      <div class="insight-card" data-tags="DL,Research,Trends">
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🧠</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Deep Learning</h3>
+        </div>
+        <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>AI Insights Team</strong> · <span class="ai-tag">#DL</span> <span class="ai-tag">#Research</span> <span class="ai-tag">#Trends</span></div>
+        <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">Deep Learning is a branch of ML that uses multi-layered neural networks to model complex patterns in data. It has revolutionized fields like computer vision, natural language processing, and speech recognition.</p>
+        <a href="dl-research.html" class="insight-link">Learn More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Innovation,Research,Trends">
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🚀</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI Innovation</h3>
+        </div>
+        <div class="insight-meta" style="font-size:0.98rem; color:#aaa; margin-bottom:0.5rem;">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Innovation</span> <span class="ai-tag">#Research</span> <span class="ai-tag">#Trends</span></div>
+        <p style="font-size:1.08rem; color:#e0e0e0; line-height:1.7; margin-bottom:1.2rem;">AI Innovation covers the latest breakthroughs and creative applications of artificial intelligence, including generative models, autonomous systems, and AI ethics.</p>
+        <a href="ai-innovation.html" class="insight-link">Learn More →</a>
+      </div>
+    </section>
+    <!-- Research Content End -->
+    <!-- Additional AI Insights Articles Start -->
+    <section class="insights-grid minimalist-grid">
+      <div class="insight-card" data-tags="GenerativeAI,Trends,Research">
+        <div class="insight-date">May 2025</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">✨</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Generative AI: The New Creative Frontier</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#GenerativeAI</span> <span class="ai-tag">#Trends</span> <span class="ai-tag">#Research</span></div>
+        <p>Generative AI is revolutionizing how we create art, music, and even code. With models like DALL·E and GPT-4, machines are now capable of producing content that rivals human creativity. <br><br><b>Subtopics:</b> Text-to-image, AI music, creative writing, generative design.<br><b>Example:</b> AI-generated paintings auctioned at major art houses.</p>
+        <a href="insight-9.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="NLP,LLM,Trends">
+        <div class="insight-date">April 2025</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">💬</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">NLP in 2025: Beyond Language Understanding</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#NLP</span> <span class="ai-tag">#LLM</span> <span class="ai-tag">#Trends</span></div>
+        <p>Natural Language Processing has evolved from simple chatbots to advanced conversational agents and language models. The focus is now on context, emotion, and multilingual understanding.<br><br><b>Subtopics:</b> Sentiment analysis, translation, conversational AI, LLMs.<br><b>Example:</b> Real-time translation in global video calls.</p>
+        <a href="insight-10.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="ComputerVision,AI,Healthcare">
+        <div class="insight-date">March 2025</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">👁️</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI in Medical Imaging: Saving Lives with Vision</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#ComputerVision</span> <span class="ai-tag">#AI</span> <span class="ai-tag">#Healthcare</span></div>
+        <p>Computer vision is transforming healthcare by enabling early disease detection and more accurate diagnoses. AI-powered imaging tools are now standard in many hospitals.<br><br><b>Subtopics:</b> X-ray analysis, tumor detection, radiology automation.<br><b>Example:</b> AI models detecting cancer from mammograms with high accuracy.</p>
+        <a href="insight-11.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="Robotics,Automation,Industry">
+        <div class="insight-date">February 2025</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🤖</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Robotics in Industry 4.0</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#Robotics</span> <span class="ai-tag">#Automation</span> <span class="ai-tag">#Industry</span></div>
+        <p>Robots are no longer confined to assembly lines. With AI, they are becoming collaborative partners in manufacturing, logistics, and even customer service.<br><br><b>Subtopics:</b> Cobots, warehouse automation, smart factories.<br><b>Example:</b> AI-driven robots working alongside humans in car manufacturing.</p>
+        <a href="insight-12.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Ethics,Regulation">
+        <div class="insight-date">January 2025</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">⚖️</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI Ethics: Navigating the Moral Maze</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Ethics</span> <span class="ai-tag">#Regulation</span></div>
+        <p>As AI systems become more powerful, ethical concerns around bias, privacy, and accountability are at the forefront. Policymakers and technologists are working together to create responsible AI frameworks.<br><br><b>Subtopics:</b> Fairness, transparency, explainability, AI law.<br><b>Example:</b> Regulations for facial recognition in public spaces.</p>
+        <a href="insight-13.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="HealthcareAI,Diagnostics,Trends">
+        <div class="insight-date">December 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🩺</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Healthcare AI: Diagnostics to Personalized Medicine</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#HealthcareAI</span> <span class="ai-tag">#Diagnostics</span> <span class="ai-tag">#Trends</span></div>
+        <p>AI is revolutionizing healthcare, from faster diagnostics to personalized treatment plans. Machine learning models are helping doctors make better decisions.<br><br><b>Subtopics:</b> Predictive analytics, patient monitoring, drug discovery.<br><b>Example:</b> AI predicting patient deterioration in ICUs.</p>
+        <a href="insight-14.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="EdgeAI,IoT,Devices">
+        <div class="insight-date">November 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">📱</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Edge AI: Intelligence at the Device Level</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#EdgeAI</span> <span class="ai-tag">#IoT</span> <span class="ai-tag">#Devices</span></div>
+        <p>Edge AI brings machine learning models directly to devices, reducing latency and improving privacy. This is powering smart cameras, wearables, and autonomous vehicles.<br><br><b>Subtopics:</b> TinyML, on-device inference, federated learning.<br><b>Example:</b> AI-powered security cameras detecting threats in real time.</p>
+        <a href="insight-15.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Finance,Automation">
+        <div class="insight-date">October 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">💸</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI in Finance: Smarter Trading and Risk Management</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Finance</span> <span class="ai-tag">#Automation</span></div>
+        <p>Financial institutions are leveraging AI for fraud detection, algorithmic trading, and risk assessment. AI is making markets more efficient and secure.<br><br><b>Subtopics:</b> Robo-advisors, credit scoring, fraud analytics.<br><b>Example:</b> AI-powered bots executing high-frequency trades.</p>
+        <a href="insight-16.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="LLM,LanguageModels,Trends">
+        <div class="insight-date">September 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">📚</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Large Language Models: Powering the Next Wave of AI</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#LLM</span> <span class="ai-tag">#LanguageModels</span> <span class="ai-tag">#Trends</span></div>
+        <p>LLMs like GPT-4 and Gemini are setting new benchmarks in natural language understanding and generation. Their applications range from chatbots to content creation.<br><br><b>Subtopics:</b> Pretraining, fine-tuning, prompt engineering.<br><b>Example:</b> AI writing news articles indistinguishable from human authors.</p>
+        <a href="insight-17.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Education,Personalization">
+        <div class="insight-date">August 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🎓</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI in Education: Personalized Learning for All</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Education</span> <span class="ai-tag">#Personalization</span></div>
+        <p>AI is enabling adaptive learning platforms that tailor content to each student's needs, making education more accessible and effective.<br><br><b>Subtopics:</b> Adaptive testing, intelligent tutoring, learning analytics.<br><b>Example:</b> AI tutors providing instant feedback to students worldwide.</p>
+        <a href="insight-18.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Climate,Environment">
+        <div class="insight-date">July 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🌱</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI for Climate Change: Data-Driven Solutions</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Climate</span> <span class="ai-tag">#Environment</span></div>
+        <p>AI is helping scientists model climate change, optimize energy usage, and develop sustainable solutions for the planet.<br><br><b>Subtopics:</b> Weather prediction, energy optimization, environmental monitoring.<br><b>Example:</b> AI models predicting extreme weather events.</p>
+        <a href="insight-19.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Security,Cybersecurity">
+        <div class="insight-date">June 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🛡️</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI in Cybersecurity: Defending the Digital World</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Security</span> <span class="ai-tag">#Cybersecurity</span></div>
+        <p>AI is at the forefront of cybersecurity, detecting threats and responding to attacks faster than ever before.<br><br><b>Subtopics:</b> Threat detection, anomaly detection, automated response.<br><b>Example:</b> AI systems blocking phishing attacks in real time.</p>
+        <a href="insight-20.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,AutonomousVehicles,Trends">
+        <div class="insight-date">May 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🚗</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Autonomous Vehicles: The Road Ahead</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#AutonomousVehicles</span> <span class="ai-tag">#Trends</span></div>
+        <p>Self-driving cars are moving from prototypes to reality, with AI at the wheel. The focus is on safety, efficiency, and regulatory challenges.<br><br><b>Subtopics:</b> Sensor fusion, path planning, V2X communication.<br><b>Example:</b> Robo-taxis operating in major cities.</p>
+        <a href="insight-21.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Quantum,Research">
+        <div class="insight-date">April 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">⚛️</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Quantum AI: Computing Beyond Limits</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Quantum</span> <span class="ai-tag">#Research</span></div>
+        <p>Quantum computing and AI are converging to solve problems once thought impossible. This synergy could unlock new frontiers in science and technology.<br><br><b>Subtopics:</b> Quantum machine learning, optimization, cryptography.<br><b>Example:</b> Quantum AI algorithms for drug discovery.</p>
+        <a href="insight-22.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,HumanAI,Interaction">
+        <div class="insight-date">March 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🤝</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">Human-AI Collaboration: Working Together</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#HumanAI</span> <span class="ai-tag">#Interaction</span></div>
+        <p>AI is not just replacing jobs, but augmenting human abilities. The future of work is collaborative, with humans and AI teaming up for better outcomes.<br><br><b>Subtopics:</b> Human-in-the-loop, decision support, creative collaboration.<br><b>Example:</b> AI-assisted design in architecture and engineering.</p>
+        <a href="insight-23.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Startups,Innovation">
+        <div class="insight-date">February 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🚀</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI Startups: Driving the Next Wave of Innovation</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Startups</span> <span class="ai-tag">#Innovation</span></div>
+        <p>Startups are at the forefront of AI innovation, bringing new ideas and products to market at lightning speed. Their agility is shaping the future of technology.<br><br><b>Subtopics:</b> AI accelerators, venture capital, product-market fit.<br><b>Example:</b> AI-powered SaaS tools for small businesses.</p>
+        <a href="insight-24.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Art,Creativity">
+        <div class="insight-date">January 2024</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🎨</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI and Art: Redefining Creativity</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Art</span> <span class="ai-tag">#Creativity</span></div>
+        <p>Artists are embracing AI as a tool for creative expression, leading to new forms of digital art and interactive installations.<br><br><b>Subtopics:</b> Generative art, neural style transfer, AI in music.<br><b>Example:</b> AI-generated music albums and digital exhibitions.</p>
+        <a href="insight-25.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,SupplyChain,Logistics">
+        <div class="insight-date">December 2023</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🚚</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI in Supply Chain: Smarter Logistics</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#SupplyChain</span> <span class="ai-tag">#Logistics</span></div>
+        <p>AI is optimizing supply chains by predicting demand, managing inventory, and streamlining logistics operations.<br><br><b>Subtopics:</b> Demand forecasting, route optimization, warehouse robotics.<br><b>Example:</b> AI predicting product shortages before they happen.</p>
+        <a href="insight-26.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Climate,Environment">
+        <div class="insight-date">November 2023</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🌱</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI for Climate Change: Data-Driven Solutions</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Climate</span> <span class="ai-tag">#Environment</span></div>
+        <p>AI is helping scientists model climate change, optimize energy usage, and develop sustainable solutions for the planet.<br><br><b>Subtopics:</b> Weather prediction, energy optimization, environmental monitoring.<br><b>Example:</b> AI models predicting extreme weather events.</p>
+        <a href="insight-27.html" class="insight-link">Read More →</a>
+      </div>
+      <div class="insight-card" data-tags="AI,Security,Cybersecurity">
+        <div class="insight-date">October 2023</div>
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:0.7rem;">
+          <span style="font-size:2rem;">🛡️</span>
+          <h3 style="font-size:1.3rem; font-weight:600; margin:0; color:#fff;">AI in Cybersecurity: Defending the Digital World</h3>
+        </div>
+        <div class="insight-meta">By <strong>AI Insights Team</strong> · <span class="ai-tag">#AI</span> <span class="ai-tag">#Security</span> <span class="ai-tag">#Cybersecurity</span></div>
+        <p>AI is at the forefront of cybersecurity, detecting threats and responding to attacks faster than ever before.<br><br><b>Subtopics:</b> Threat detection, anomaly detection, automated response.<br><b>Example:</b> AI systems blocking phishing attacks in real time.</p>
+        <a href="insight-28.html" class="insight-link">Read More →</a>
+      </div>
+    </section>
+    <!-- Additional AI Insights Articles End -->
+    <script>
+      // Tag filtering logic with visual highlight
+      document.querySelectorAll('.tag-filter').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const tag = btn.textContent.replace('#', '').trim();
+          document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active-tag'));
+          btn.classList.add('active-tag');
+          document.querySelectorAll('.insight-card').forEach(function(card) {
+            if (tag === 'All') {
+              card.style.display = '';
+            } else {
+              const tags = card.getAttribute('data-tags')?.split(',') || [];
+              card.style.display = tags.includes(tag) ? '' : 'none';
+            }
+          });
+        });
+      });
+    </script>
+  </main>
+  <!-- Footer (copied from index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="logo">AI Insights</div>
+          <p>Pioneering the future of artificial intelligence research and application.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="#" aria-label="GitHub">🐙</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>📧 info@aiinsights.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <p>📍 San Francisco, CA</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Insights. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

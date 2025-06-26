@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research - AI Insights</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .research-controls { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; align-items: center; }
+    .research-search { flex: 1; min-width: 220px; }
+    .research-filter { min-width: 180px; }
+    .research-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .research-card { background: rgba(255,255,255,0.04); border-radius: 14px; box-shadow: 0 2px 16px #40e0ff22; padding: 1.5rem 1.2rem; transition: box-shadow 0.2s; }
+    .research-card:hover { box-shadow: 0 4px 32px #40e0ff44; }
+    .research-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #40e0ff; }
+    .research-meta { font-size: 0.98rem; color: #bdbdbd; margin-bottom: 0.7rem; }
+    .research-tags { margin-bottom: 0.7rem; }
+    .research-tag { display: inline-block; background: #a855f7; color: #fff; border-radius: 8px; padding: 0.18rem 0.7rem; font-size: 0.85rem; margin-right: 0.4rem; margin-bottom: 0.2rem; }
+    .research-source { color: #fff; background: #40e0ff; border-radius: 6px; padding: 0.1rem 0.5rem; font-size: 0.85rem; margin-left: 0.5rem; }
+    .read-more-link { color: #40e0ff; text-decoration: underline; font-weight: 600; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <a href="index.html" style="position:fixed;right:2.5rem;bottom:2.5rem;z-index:1000;padding:0.9rem 1.1rem;background:linear-gradient(90deg,#40e0ff,#b266ff);color:#111;display:flex;align-items:center;justify-content:center;border-radius:2rem;text-decoration:none;box-shadow:0 4px 24px #40e0ff44;font-size:1.7rem;transition:background 0.2s,box-shadow 0.2s;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="#111" d="M4 10.75V19a1 1 0 0 0 1 1h4.25v-4.25h5.5V20H19a1 1 0 0 0 1-1v-8.25a1 1 0 0 0-.293-.707l-7-7a1 1 0 0 0-1.414 0l-7 7A1 1 0 0 0 4 10.75Zm2 1.414 6-6 6 6V18h-2.25v-4.25a1 1 0 0 0-1-1h-3.5a1 1 0 0 0-1 1V18H6v-5.836Z"/></svg></a>
+  <!-- Navbar (copied from index.html) -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">AI Insights</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-menu" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section>
+      <h1>AI Research Papers & Articles</h1>
+      <!-- Latest Updates Section -->
+      <div id="latest-updates" style="margin-bottom:2.5rem;"></div>
+      <!-- Research Timeline -->
+      <div id="research-timeline" style="margin-bottom:2.5rem;"></div>
+      <!-- Research Comparison Tool -->
+      <button id="open-compare-btn" style="background:#40e0ff;color:#181828;font-weight:600;padding:0.4rem 1.1rem;border-radius:8px;border:none;cursor:pointer;margin-bottom:1.5rem;">Compare Papers</button>
+      <!-- AI Research News Feed -->
+      <div id="ai-news-feed" style="margin-bottom:2.5rem;"></div>
+      <!-- Dataset Repository -->
+      <div id="dataset-repo" style="margin-bottom:2.5rem;"></div>
+      <!-- Featured/Trending Section -->
+      <div id="featured-research" class="research-list" style="margin-bottom:2.5rem;"></div>
+      <!-- Advanced Filters -->
+      <div class="research-controls" style="flex-wrap:wrap;gap:1rem 2rem;">
+        <input type="text" id="research-search" class="research-search" placeholder="Search by keyword, author, or lab..." />
+        <select id="research-category-filter" class="research-filter">
+          <option value="">All Categories</option>
+          <option value="NLP">NLP</option>
+          <option value="LLMs">LLMs</option>
+          <option value="GANs">GANs</option>
+          <option value="Computer Vision">Computer Vision</option>
+          <option value="Robotics">Robotics</option>
+          <option value="Ethics">Ethics</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Reinforcement Learning">Reinforcement Learning</option>
+          <option value="AI Theory">AI Theory</option>
+        </select>
+        <select id="research-year-filter" class="research-filter">
+          <option value="">All Years</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+        </select>
+        <input type="text" id="research-author-filter" class="research-search" placeholder="Author or Lab..." style="max-width:180px;" />
+        <select id="research-source-filter" class="research-filter">
+          <option value="">All Sources</option>
+          <option value="arXiv">arXiv</option>
+          <option value="NeurIPS">NeurIPS</option>
+          <option value="Nature">Nature</option>
+          <option value="ICLR">ICLR</option>
+          <option value="CVPR">CVPR</option>
+          <option value="Science">Science</option>
+        </select>
+        <button id="submit-research-btn" style="background:#a855f7;color:#fff;font-weight:600;padding:0.4rem 1.1rem;border-radius:8px;border:none;cursor:pointer;">Submit Research</button>
+      </div>
+      <div id="research-list" class="research-list"></div>
+    </section>
+  </main>
+  <!-- Footer (copied from index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="logo">AI Insights</div>
+          <p>Pioneering the future of artificial intelligence research and application.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="#" aria-label="GitHub">🐙</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>📧 info@aiinsights.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <p>📍 San Francisco, CA</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Insights. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- PDF Viewer Modal -->
+  <div id="pdf-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:2000;align-items:center;justify-content:center;">
+    <div style="position:relative;width:90vw;max-width:900px;height:90vh;background:#181828;border-radius:12px;box-shadow:0 8px 40px #40e0ff55;display:flex;flex-direction:column;">
+      <button id="close-pdf-modal" style="position:absolute;top:1rem;right:1rem;background:#a855f7;color:#fff;border:none;border-radius:50%;width:2.2rem;height:2.2rem;font-size:1.3rem;cursor:pointer;z-index:10;">&times;</button>
+      <iframe id="pdf-viewer" src="" style="flex:1;width:100%;height:100%;border:none;border-radius:0 0 12px 12px;background:#222;"></iframe>
+      <a id="pdf-download-link" href="#" download style="margin:1rem auto 1.2rem auto;display:inline-block;background:#40e0ff;color:#181828;font-weight:600;padding:0.5rem 1.5rem;border-radius:8px;text-decoration:none;">Download PDF</a>
+    </div>
+  </div>
+  <!-- Submit Research Modal -->
+  <div id="submit-research-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:2100;align-items:center;justify-content:center;">
+    <div style="position:relative;width:95vw;max-width:500px;background:#181828;border-radius:14px;padding:2rem 1.5rem;box-shadow:0 8px 40px #40e0ff55;">
+      <button id="close-submit-modal" style="position:absolute;top:1rem;right:1rem;background:#a855f7;color:#fff;border:none;border-radius:50%;width:2.2rem;height:2.2rem;font-size:1.3rem;cursor:pointer;z-index:10;">&times;</button>
+      <h2 style="margin-bottom:1.2rem;">Submit Research</h2>
+      <form id="submit-research-form">
+        <input type="text" id="new-title" placeholder="Title" required style="width:100%;margin-bottom:0.7rem;" />
+        <input type="text" id="new-authors" placeholder="Authors/Lab" required style="width:100%;margin-bottom:0.7rem;" />
+        <input type="text" id="new-year" placeholder="Year" required style="width:100%;margin-bottom:0.7rem;" />
+        <input type="text" id="new-source" placeholder="Source (arXiv, NeurIPS, etc.)" required style="width:100%;margin-bottom:0.7rem;" />
+        <input type="text" id="new-tags" placeholder="Tags (comma separated)" style="width:100%;margin-bottom:0.7rem;" />
+        <input type="url" id="new-pdf" placeholder="PDF Link" required style="width:100%;margin-bottom:0.7rem;" />
+        <textarea id="new-summary" placeholder="Summary" required style="width:100%;margin-bottom:0.7rem;"></textarea>
+        <textarea id="new-tldr" placeholder="TL;DR" style="width:100%;margin-bottom:0.7rem;"></textarea>
+        <textarea id="new-keytakeaways" placeholder="Key Takeaways (comma separated)" style="width:100%;margin-bottom:0.7rem;"></textarea>
+        <textarea id="new-methodology" placeholder="Methodology" style="width:100%;margin-bottom:0.7rem;"></textarea>
+        <textarea id="new-results" placeholder="Results" style="width:100%;margin-bottom:0.7rem;"></textarea>
+        <button type="submit" style="background:#40e0ff;color:#181828;font-weight:600;padding:0.5rem 1.5rem;border-radius:8px;border:none;cursor:pointer;">Submit for Review</button>
+      </form>
+      <div id="submit-success" style="display:none;color:#40e0ff;margin-top:1rem;">Submission received! Awaiting admin approval.</div>
+    </div>
+  </div>
+  <!-- Comment/Discussion Modal -->
+  <div id="comment-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:2200;align-items:center;justify-content:center;">
+    <div style="position:relative;width:95vw;max-width:600px;background:#181828;border-radius:14px;padding:2rem 1.5rem;box-shadow:0 8px 40px #40e0ff55;max-height:90vh;overflow-y:auto;">
+      <button id="close-comment-modal" style="position:absolute;top:1rem;right:1rem;background:#a855f7;color:#fff;border:none;border-radius:50%;width:2.2rem;height:2.2rem;font-size:1.3rem;cursor:pointer;z-index:10;">&times;</button>
+      <h2 style="margin-bottom:1.2rem;">Discussion</h2>
+      <div id="comment-list"></div>
+      <form id="add-comment-form" style="margin-top:1.2rem;">
+        <textarea id="new-comment" placeholder="Add your comment..." required style="width:100%;margin-bottom:0.7rem;"></textarea>
+        <button type="submit" style="background:#40e0ff;color:#181828;font-weight:600;padding:0.5rem 1.5rem;border-radius:8px;border:none;cursor:pointer;">Post Comment</button>
+      </form>
+    </div>
+  </div>
+  <!-- Research Comparison Modal -->
+  <div id="compare-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:2300;align-items:center;justify-content:center;">
+    <div style="position:relative;width:98vw;max-width:900px;background:#181828;border-radius:14px;padding:2rem 1.5rem;box-shadow:0 8px 40px #40e0ff55;max-height:90vh;overflow-y:auto;">
+      <button id="close-compare-modal" style="position:absolute;top:1rem;right:1rem;background:#a855f7;color:#fff;border:none;border-radius:50%;width:2.2rem;height:2.2rem;font-size:1.3rem;cursor:pointer;z-index:10;">&times;</button>
+      <h2 style="margin-bottom:1.2rem;">Compare Research Papers</h2>
+      <div id="compare-selectors" style="display:flex;gap:1rem;margin-bottom:1.2rem;"></div>
+      <div id="compare-table"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
